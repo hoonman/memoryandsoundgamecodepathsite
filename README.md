@@ -42,7 +42,7 @@ If you recorded multiple GIFs for all the implemented features, you can add them
 ![](https://github.com/hoonman/memoryandsoundgamecodepathsite/blob/main/memorygame1.gif)
 ![](https://github.com/hoonman/memoryandsoundgamecodepathsite/blob/main/memorygame2.gif)
 ![](https://github.com/hoonman/memoryandsoundgamecodepathsite/blob/main/memorygame3.gif)
-![](gif4-link-here)
+![gif shows speeding up & more than 4 buttons](https://github.com/hoonman/memoryandsoundgamecodepathsite/blob/main/memorygame4.gif)
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here.
