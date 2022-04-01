@@ -46,9 +46,13 @@ If you recorded multiple GIFs for all the implemented features, you can add them
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
-[Web development guide: https://www.youtube.com/watch?v=ysEN5RaKOlA 
+[
+Web development guide: https://www.youtube.com/watch?v=ysEN5RaKOlA  
+
 HTML tutorial: https://www.youtube.com/watch?v=3JluqTojuME&list=PLkWSXVBjquF2NaMJEjwA4NlDVWDCKuysu&index=1 
+
 HTML & CSS: https://www.youtube.com/watch?v=gBi8Obib0tw 
+
 W3schools CSS: https://www.w3schools.com/css/default.asp ]
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
