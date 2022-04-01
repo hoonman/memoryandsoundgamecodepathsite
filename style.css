@@ -13,19 +13,25 @@ html {
 /* adjust typography defaults */
 body {
   margin: 2rem;
-  font-family: helvetica, arial, sans-serif;
+  font-family: monospace;
   line-height: 1.5;
-  background-color: slategrey;
-  color: white; 
+  background-color: orange;
+  color: black; 
 }
 
 h1{
-  font-family: verdana, arial, sans-serif; 
+  font-family: monospace; 
 }
 
 button{
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 70px;
+}
+#startBtn{
+  background:green;
+}
+#stopBtn{
+  background:red;
 }
 #gameButtonArea > button {
   width:200px;
