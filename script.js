@@ -1,19 +1,38 @@
 //global constants
-const clueHoldTime = 1000;
+// const clueHoldTime = 1000;
 const cluePauseTime = 333; //how long to pause in between clues
-const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
+const nextClueWaitTime = 600; //how long to wait before starting playback of the clue sequence
 
 //Global Variables
-var pattern = [2, 2, 4, 3, 2, 1, 2, 4];
+// var pattern = [5, 2, 2, 4, 3, 2, 1, 2, 4];
+var num1, num2, num3, num4, num5;
+function getRandomInt(max){
+  return Math.floor(Math.random() * max);
+}
+  // num1 = getRandomInt(5) + 1;
+  // num2 = getRandomInt(5) + 1;
+  // num3 = getRandomInt(5) + 1;
+  // num4 = getRandomInt(5) + 1;
+  // num5 = getRandomInt(5) + 1;
+var pattern = [num1, num2, num3, num4, num5];
 var progress = 0;
 var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.5; //between 0.0 and 1.0
 var guessCounter = 0;
+var clueHoldTime = 1000;
+var mistakes = 0;
 
 function startGame() {
   progress = 0;
+  mistakes = 0;
   gamePlaying = true;
+  num1 = getRandomInt(5) + 1;
+  num2 = getRandomInt(5) + 1;
+  num3 = getRandomInt(5) + 1;
+  num4 = getRandomInt(5) + 1;
+  num5 = getRandomInt(5) + 1;
+  pattern = [num1, num2, num3, num4, num5];
   document.getElementById("startBtn").classList.add("hidden");
   document.getElementById("stopBtn").classList.remove("hidden");
   playClueSequence();
@@ -25,13 +44,34 @@ function stopGame() {
   document.getElementById("stopBtn").classList.add("hidden");
 }
 
-// Sound Synthesis Functions
+//Sound Synthesis Functions
 const freqMap = {
   1: 261.6,
-  2: 329.6,
-  3: 392,
-  4: 520.2
+  2: 295.2,  
+  3: 330.5,
+  4: 350.2,
+  5: 395.5
 }
+// audio works.. but not really
+// function playMyAudio(){
+//       document.getElementById("Yaa").play();
+//       }
+
+// function playTone(){
+//       document.getElementById("Yaa").play();
+        
+//       }
+
+// function playTone(btn,len){ 
+//   o.frequency.value = freqMap[btn]
+//   g.gain.setTargetAtTime(volume,context.currentTime + 0.05,0.025)
+//   context.resume()
+//   tonePlaying = true
+//   setTimeout(function(){
+//     stopTone()
+//   },len)
+// }
+
 function playTone(btn,len){ 
   o.frequency.value = freqMap[btn]
   g.gain.setTargetAtTime(volume,context.currentTime + 0.05,0.025)
@@ -97,11 +137,13 @@ function playClueSequence(){
 function loseGame(){
   stopGame();
   alert("Game Over. You lost.");
+  clueHoldTime = 1000;
 }
 
 function winGame(){
   stopGame();
   alert("You won!");
+  clueHoldTime = 1000;
 }
 
 function guess(btn){
@@ -121,6 +163,7 @@ function guess(btn){
         //Pattern correct. Add next segment
         progress++;
         playClueSequence();
+        clueHoldTime = clueHoldTime - 150;
       }
     }else{
       //so far so good... check the next guess
@@ -129,7 +172,10 @@ function guess(btn){
   }else{
     //Guess was incorrect
     //GAME OVER: LOSE!
-    loseGame();
+    mistakes++; // made a mistake!
+    if (mistakes>2){
+      loseGame();
+    }
   }
 }    
 
