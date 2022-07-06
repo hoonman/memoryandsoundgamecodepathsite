@@ -77,7 +77,7 @@ Since I was always interested in coding my own piano on a web page and since I p
 
 ## Interview Recording URL Link
 
-[My 5-minute Interview Recording](https://www.youtube.com/watch?v=RQbbO4-zni0)
+[My 5-minute Interview Recording](https://www.youtube.com/)
 
 
 ## License
